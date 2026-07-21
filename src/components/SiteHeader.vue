@@ -1,7 +1,7 @@
 <script setup>
 import { onBeforeUnmount, ref, watch } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-import { Phone, CalendarDays } from "lucide-vue-next";
+import { Phone, CalendarDays, X } from "lucide-vue-next";
 import logoUrl from "../assets/bronn-logo.svg";
 import { contacts, navItems } from "../data/siteData";
 
@@ -76,6 +76,9 @@ onBeforeUnmount(() => {
 
       <Transition name="drawer">
         <aside v-if="isOpen" id="mobile-menu" class="mobile-menu" aria-label="Мобильное меню">
+          <button class="drawer-close" type="button" aria-label="Закрыть меню" @click="isOpen = false">
+            <X :size="24" />
+          </button>
           <RouterLink class="mobile-menu__brand" to="/">
             <img :src="logoUrl" alt="" aria-hidden="true" />
             <span>

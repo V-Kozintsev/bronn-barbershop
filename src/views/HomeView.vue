@@ -1,7 +1,7 @@
 <script setup>
 import { ArrowRight, Clock, MapPin, Star } from "lucide-vue-next";
 import ServiceCard from "../components/ServiceCard.vue";
-import MasterCard from "../components/MasterCard.vue";
+import MasterCarousel from "../components/MasterCarousel.vue";
 import { assets, contacts, facts, masters, services } from "../data/siteData";
 </script>
 
@@ -72,8 +72,6 @@ import { assets, contacts, facts, masters, services } from "../data/siteData";
       <h2>Мастера, к которым возвращаются</h2>
       <RouterLink to="/masters">Все мастера <ArrowRight :size="18" /></RouterLink>
     </div>
-    <div class="master-grid">
-      <MasterCard v-for="master in masters.slice(0, 4)" :key="master.name" :master="master" />
-    </div>
+    <MasterCarousel :masters="masters" />
   </section>
 </template>

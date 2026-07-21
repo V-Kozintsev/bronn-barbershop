@@ -1,10 +1,10 @@
 <script setup>
-import MasterCard from "../components/MasterCard.vue";
+import MasterCarousel from "../components/MasterCarousel.vue";
 import { masters } from "../data/siteData";
 </script>
 
 <template>
-  <section class="page-intro">
+  <section class="page-intro page-intro-compact">
     <span class="eyebrow">Мастера</span>
     <h1>Команда Бронн</h1>
     <p>
@@ -13,9 +13,7 @@ import { masters } from "../data/siteData";
     </p>
   </section>
 
-  <section class="section">
-    <div class="master-grid">
-      <MasterCard v-for="master in masters" :key="master.name" :master="master" />
-    </div>
+  <section class="section section-tight">
+    <MasterCarousel :masters="masters" />
   </section>
 </template>

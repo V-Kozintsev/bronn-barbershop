@@ -282,6 +282,21 @@ main {
   backdrop-filter: blur(22px);
 }
 
+.drawer-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 250, 242, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.12);
+  color: #fffaf2;
+  cursor: pointer;
+}
+
 .mobile-menu a {
   padding: 16px 14px;
   color: rgba(255, 250, 242, 0.78);
@@ -299,7 +314,8 @@ main {
   align-items: center;
   gap: 12px;
   width: fit-content;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  padding-right: 60px !important;
   padding: 0 !important;
   background: transparent !important;
 }
@@ -568,6 +584,10 @@ p {
   padding: clamp(58px, 8vw, 118px) 0;
 }
 
+.section-tight {
+  padding-top: clamp(22px, 3vw, 48px);
+}
+
 .section-heading {
   display: flex;
   align-items: end;
@@ -613,14 +633,18 @@ p {
 
 .service-card {
   display: grid;
-  min-height: 410px;
+  min-height: 430px;
   color: var(--ink);
 }
 
 .service-card img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: clamp(190px, 14vw, 238px);
+  object-fit: contain;
+  object-position: center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(185, 130, 69, 0.18), transparent 38%),
+    #201f1d;
 }
 
 .service-card div {
@@ -649,6 +673,19 @@ p {
   align-self: end;
   font-family: "Oswald", sans-serif;
   font-size: 24px;
+}
+
+.service-card em,
+.master-card__body strong,
+.pricing-band a {
+  align-self: end;
+  width: fit-content;
+  color: var(--clay);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .card-arrow {
@@ -703,12 +740,63 @@ p {
 
 .master-card img {
   width: 100%;
-  aspect-ratio: 4 / 4.6;
-  object-fit: cover;
+  height: clamp(280px, 28vw, 420px);
+  object-fit: contain;
+  object-position: center bottom;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(185, 130, 69, 0.16), transparent 42%),
+    #201f1d;
 }
 
 .master-card__body {
+  display: grid;
+  gap: 9px;
   padding: 18px;
+}
+
+.master-carousel {
+  position: relative;
+}
+
+.carousel-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.carousel-actions button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.carousel-actions button:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.master-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, calc((100% - 84px) / 4));
+  gap: 28px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: thin;
+  padding-bottom: 10px;
+}
+
+.master-track .master-card {
+  scroll-snap-align: start;
 }
 
 .tag-row span {
@@ -727,6 +815,11 @@ p {
   text-align: center;
 }
 
+.page-intro-compact {
+  padding-top: clamp(42px, 6vw, 96px);
+  padding-bottom: clamp(22px, 4vw, 56px);
+}
+
 .page-intro h1 {
   margin-inline: auto;
   font-size: clamp(58px, 9vw, 132px);
@@ -735,6 +828,15 @@ p {
 .page-intro p {
   max-width: 780px;
   margin-inline: auto;
+}
+
+.page-intro.page-intro-compact h1 {
+  max-width: 900px;
+  font-size: clamp(46px, 7vw, 104px);
+}
+
+.page-intro.page-intro-compact p {
+  max-width: 720px;
 }
 
 .pricing-band {
@@ -749,6 +851,8 @@ p {
 }
 
 .pricing-band div {
+  display: grid;
+  gap: 12px;
   min-height: 240px;
   padding: 30px;
   background: var(--charcoal);
@@ -769,6 +873,10 @@ p {
   font-size: 28px;
 }
 
+.pricing-band a {
+  color: #d5a15e;
+}
+
 .booking-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(420px, 0.72fr);
@@ -782,17 +890,21 @@ p {
 }
 
 .booking-copy h1 {
-  font-size: clamp(54px, 8vw, 116px);
+  max-width: 650px;
+  font-size: clamp(54px, 6.4vw, 96px);
 }
 
 .contact-stack {
   display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
   margin-top: 34px;
+  max-width: 620px;
 }
 
 .contact-stack a,
 .contact-stack span {
-  width: fit-content;
+  width: 100%;
+  min-height: 54px;
   padding: 13px 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -901,7 +1013,7 @@ p {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(260px, 1.2fr) 0.7fr minmax(230px, 0.8fr) minmax(190px, 0.7fr);
+  grid-template-columns: minmax(240px, 1.1fr) minmax(110px, 0.45fr) minmax(220px, 0.75fr) minmax(200px, 0.75fr);
   gap: clamp(20px, 3vw, 44px);
   padding: clamp(28px, 5vw, 58px);
 }
@@ -1062,6 +1174,12 @@ p {
   }
 }
 
+@media (max-width: 980px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
   .site-header,
   .hero-section,
@@ -1100,7 +1218,8 @@ p {
   }
 
   .brand small {
-    display: none;
+    display: block;
+    font-size: 9px;
   }
 
   .icon-link {
@@ -1111,6 +1230,10 @@ p {
     min-height: auto;
     margin-top: 12px;
     padding: 120px 18px 24px;
+  }
+
+  .hero-actions {
+    display: grid;
   }
 
   h1 {
@@ -1151,11 +1274,33 @@ p {
     min-height: auto;
   }
 
+  .service-card img {
+    height: clamp(190px, 58vw, 280px);
+  }
+
+  .master-track {
+    grid-auto-columns: minmax(238px, 78vw);
+    gap: 16px;
+  }
+
+  .master-card img {
+    height: 260px;
+  }
+
+  .master-card__body {
+    padding: 16px;
+  }
+
+  .master-card p {
+    font-size: 13px;
+  }
+
   .split-section img {
     min-height: 320px;
   }
 
   .footer-grid {
+    grid-template-columns: 1fr;
     gap: 16px;
     padding: 22px;
   }
@@ -1191,12 +1336,29 @@ p {
   .page-intro h1 {
     font-size: clamp(48px, 16vw, 74px);
   }
+
+  .booking-copy h1 {
+    max-width: 480px;
+    font-size: clamp(46px, 15vw, 76px);
+  }
+
+  .contact-stack {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
   .hero-actions .button {
     width: 100%;
   }
+
+  .hero-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
 
   .booking-form {
     padding: 16px;

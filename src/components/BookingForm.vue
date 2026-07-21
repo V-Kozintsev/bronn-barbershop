@@ -1,16 +1,42 @@
 <script setup>
-import { computed, reactive, ref } from "vue";
+import { computed, reactive, ref, watch } from "vue";
+import { useRoute } from "vue-router";
 import { CheckCircle2, Loader2 } from "lucide-vue-next";
-import { services } from "../data/siteData";
+import { masters, services } from "../data/siteData";
+
+const route = useRoute();
 
 const form = reactive({
   name: "",
   phone: "",
   service: services[0].title,
+  master: "",
   date: "",
   time: "12:00",
   comment: "",
 });
+
+function applyQuerySelection() {
+  const service = services.find((item) => item.title === route.query.service);
+  const master = masters.find((item) => item.name === route.query.master);
+
+  if (service) {
+    form.service = service.title;
+  }
+
+  if (master) {
+    form.master = master.name;
+  }
+}
+
+applyQuerySelection();
+
+watch(
+  () => route.query,
+  () => {
+    applyQuerySelection();
+  }
+);
 
 const touched = ref(false);
 const submitting = ref(false);
@@ -39,6 +65,7 @@ function resetForm() {
   form.name = "";
   form.phone = "";
   form.service = services[0].title;
+  form.master = "";
   form.date = "";
   form.time = "12:00";
   form.comment = "";
@@ -71,6 +98,16 @@ function resetForm() {
         <select v-model="form.service">
           <option v-for="service in services" :key="service.title" :value="service.title">
             {{ service.title }} - {{ service.price }}
+          </option>
+        </select>
+      </label>
+
+      <label>
+        Мастер
+        <select v-model="form.master">
+          <option value="">Любой свободный мастер</option>
+          <option v-for="master in masters" :key="master.name" :value="master.name">
+            {{ master.name }} - {{ master.role }}
           </option>
         </select>
       </label>
