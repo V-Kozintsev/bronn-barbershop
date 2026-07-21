@@ -5,6 +5,7 @@ import HomeView from "./views/HomeView.vue";
 import ServicesView from "./views/ServicesView.vue";
 import MastersView from "./views/MastersView.vue";
 import BookingView from "./views/BookingView.vue";
+import PrivacyView from "./views/PrivacyView.vue";
 import "./assets/styles.css";
 
 const routes = [
@@ -12,6 +13,7 @@ const routes = [
   { path: "/services", name: "services", component: ServicesView },
   { path: "/masters", name: "masters", component: MastersView },
   { path: "/booking", name: "booking", component: BookingView },
+  { path: "/privacy", name: "privacy", component: PrivacyView },
 ];
 
 const router = createRouter({

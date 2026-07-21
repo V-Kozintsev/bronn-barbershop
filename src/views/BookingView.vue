@@ -8,7 +8,7 @@ import { contacts } from "../data/siteData";
   <section class="booking-layout">
     <div class="booking-copy">
       <span class="eyebrow">Запись</span>
-      <h1>Выберите услугу и удобное время</h1>
+      <h1>Записаться онлайн</h1>
       <p>
         Заявка отправляется администратору. Мы подтвердим визит по телефону или в
         мессенджере.

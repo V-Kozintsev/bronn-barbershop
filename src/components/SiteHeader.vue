@@ -1,7 +1,8 @@
 <script setup>
-import { ref, watch } from "vue";
+import { onBeforeUnmount, ref, watch } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-import { Menu, X, Phone, CalendarDays } from "lucide-vue-next";
+import { Phone, CalendarDays } from "lucide-vue-next";
+import logoUrl from "../assets/bronn-logo.svg";
 import { contacts, navItems } from "../data/siteData";
 
 const isOpen = ref(false);
@@ -13,16 +14,20 @@ watch(
     isOpen.value = false;
   }
 );
+
+watch(isOpen, (open) => {
+  document.body.classList.toggle("menu-open", open);
+});
+
+onBeforeUnmount(() => {
+  document.body.classList.remove("menu-open");
+});
 </script>
 
 <template>
   <header class="site-header">
     <RouterLink class="brand" to="/" aria-label="Бронн Барбершоп">
-      <span class="brand-mark">Б</span>
-      <span>
-        <strong>Бронн</strong>
-        <small>barbershop spb</small>
-      </span>
+      <img :src="logoUrl" alt="Бронн Барбершоп" />
     </RouterLink>
 
     <nav class="desktop-nav" aria-label="Основная навигация">
@@ -37,30 +42,49 @@ watch(
       </a>
       <RouterLink class="button button-small" to="/booking">
         <CalendarDays :size="18" />
-        Записаться
+        Записаться онлайн
       </RouterLink>
       <button
         class="menu-button"
+        :class="{ 'is-open': isOpen }"
         type="button"
         :aria-expanded="isOpen"
         aria-controls="mobile-menu"
+        aria-label="Открыть меню"
         @click="isOpen = !isOpen"
       >
-        <Menu v-if="!isOpen" :size="24" />
-        <X v-else :size="24" />
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
 
-    <Transition name="menu">
-      <div v-if="isOpen" id="mobile-menu" class="mobile-menu">
+    <Transition name="drawer-fade">
+      <button
+        v-if="isOpen"
+        class="menu-scrim"
+        type="button"
+        aria-label="Закрыть меню"
+        @click="isOpen = false"
+      ></button>
+    </Transition>
+
+    <Transition name="drawer">
+      <aside v-if="isOpen" id="mobile-menu" class="mobile-menu" aria-label="Мобильное меню">
+        <RouterLink class="mobile-menu__brand" to="/">
+          <img :src="logoUrl" alt="Бронн Барбершоп" />
+        </RouterLink>
         <RouterLink v-for="item in navItems" :key="item.to" :to="item.to">
           {{ item.label }}
         </RouterLink>
+        <RouterLink class="button mobile-menu__cta" to="/booking">Записаться онлайн</RouterLink>
         <div class="mobile-menu__meta">
           <a :href="contacts.phoneHref">{{ contacts.phone }}</a>
+          <a :href="contacts.telegramHref">Telegram</a>
           <span>{{ contacts.hours }}</span>
+          <span>{{ contacts.address }}</span>
         </div>
-      </div>
+      </aside>
     </Transition>
   </header>
 </template>

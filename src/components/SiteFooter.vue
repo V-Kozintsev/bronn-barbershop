@@ -27,6 +27,7 @@ import { contacts, navItems } from "../data/siteData";
         <span>ООО «Бронн Барбер»</span>
         <span>ИНН 7800000000</span>
         <span>ОГРН 1267800000000</span>
+        <RouterLink to="/privacy">Политика конфиденциальности</RouterLink>
         <span>Не является публичной офертой</span>
       </div>
     </div>

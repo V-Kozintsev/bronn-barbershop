@@ -13,7 +13,7 @@ defineProps({
   <RouterLink class="service-card" to="/booking">
     <img :src="service.image" :alt="service.title" loading="lazy" />
     <div>
-      <span>{{ service.duration }}</span>
+      <span>{{ service.category }} · {{ service.duration }}</span>
       <h3>{{ service.title }}</h3>
       <p>{{ service.description }}</p>
       <strong>{{ service.price }}</strong>

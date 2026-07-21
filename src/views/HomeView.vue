@@ -16,7 +16,7 @@ import { assets, contacts, facts, masters, services } from "../data/siteData";
       </p>
       <div class="hero-actions">
         <RouterLink class="button" to="/booking">
-          Записаться
+          Записаться онлайн
           <ArrowRight :size="19" />
         </RouterLink>
         <a class="button button-ghost" :href="contacts.phoneHref">{{ contacts.phone }}</a>
