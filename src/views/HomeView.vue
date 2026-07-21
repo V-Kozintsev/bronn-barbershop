@@ -7,12 +7,13 @@ import { assets, contacts, facts, masters, services } from "../data/siteData";
 
 <template>
   <section class="hero-section">
+    <img class="hero-bg" :src="assets.heroImage" alt="Интерьер барбершопа Бронн" />
     <div class="hero-copy">
       <span class="eyebrow">Санкт-Петербург · ул. Рубинштейна</span>
       <h1>Бронн</h1>
       <p>
-        Барбершоп для аккуратной формы, чистой бороды и спокойного сервиса без
-        лишней театральности.
+        Мужские стрижки, борода, бритье и уход в барбершопе на Рубинштейна.
+        Чёткий результат, спокойный сервис и мастера, которые слышат задачу.
       </p>
       <div class="hero-actions">
         <RouterLink class="button" to="/booking">
@@ -21,14 +22,19 @@ import { assets, contacts, facts, masters, services } from "../data/siteData";
         </RouterLink>
         <a class="button button-ghost" :href="contacts.phoneHref">{{ contacts.phone }}</a>
       </div>
-      <div class="hero-facts">
+      <div class="hero-directions">
         <div v-for="fact in facts" :key="fact.label">
           <strong>{{ fact.value }}</strong>
           <span>{{ fact.label }}</span>
         </div>
       </div>
     </div>
-    <img class="hero-image" :src="assets.heroImage" alt="Интерьер барбершопа Бронн" />
+    <div class="hero-visit">
+      <span>Сегодня</span>
+      <strong>10:00-22:00</strong>
+      <p>{{ contacts.address }}</p>
+      <RouterLink to="/booking">Выбрать время <ArrowRight :size="18" /></RouterLink>
+    </div>
   </section>
 
   <section class="section">
@@ -38,7 +44,7 @@ import { assets, contacts, facts, masters, services } from "../data/siteData";
       <RouterLink to="/services">Весь прайс <ArrowRight :size="18" /></RouterLink>
     </div>
     <div class="service-grid">
-      <ServiceCard v-for="service in services.slice(0, 3)" :key="service.title" :service="service" />
+      <ServiceCard v-for="service in services.slice(0, 4)" :key="service.title" :service="service" />
     </div>
   </section>
 
@@ -67,7 +73,7 @@ import { assets, contacts, facts, masters, services } from "../data/siteData";
       <RouterLink to="/masters">Все мастера <ArrowRight :size="18" /></RouterLink>
     </div>
     <div class="master-grid">
-      <MasterCard v-for="master in masters.slice(0, 2)" :key="master.name" :master="master" />
+      <MasterCard v-for="master in masters.slice(0, 4)" :key="master.name" :master="master" />
     </div>
   </section>
 </template>

@@ -1,8 +1,20 @@
-import heroImage from "../assets/images/hero-interior.png";
-import haircutImage from "../assets/images/service-haircut.png";
-import beardImage from "../assets/images/service-beard.png";
-import masterImage from "../assets/images/master-portrait.png";
-import toolsImage from "../assets/images/atmosphere-tools.png";
+import heroImage from "../assets/images/hero-interior.jpg";
+import haircutImage from "../assets/images/service-haircut.jpg";
+import beardImage from "../assets/images/service-beard.jpg";
+import masterImage from "../assets/images/master-portrait.jpg";
+import toolsImage from "../assets/images/atmosphere-tools.jpg";
+import serviceFadeImage from "../assets/images/service-fade.jpg";
+import serviceShaveImage from "../assets/images/service-shave.jpg";
+import serviceSpaImage from "../assets/images/service-spa.jpg";
+import serviceStylingImage from "../assets/images/service-styling.jpg";
+import serviceFamilyImage from "../assets/images/service-family.jpg";
+import masterSeniorImage from "../assets/images/master-senior.jpg";
+import masterFadeImage from "../assets/images/master-fade.jpg";
+import masterClassicImage from "../assets/images/master-classic.jpg";
+import masterModernImage from "../assets/images/master-modern.jpg";
+import masterRazorImage from "../assets/images/master-razor.jpg";
+import masterTowelImage from "../assets/images/master-towel.jpg";
+import masterGreenImage from "../assets/images/master-green.jpg";
 
 export const contacts = {
   phone: "+7 812 309-42-18",
@@ -47,7 +59,7 @@ export const services = [
     title: "Стрижка + борода",
     price: "от 3 300 ₽",
     duration: "75-90 мин",
-    image: toolsImage,
+    image: serviceStylingImage,
     category: "Комплексы",
     description: "Полный образ за один визит, с рекомендациями по уходу.",
   },
@@ -55,7 +67,7 @@ export const services = [
     title: "Камуфляж седины",
     price: "от 1 700 ₽",
     duration: "25 мин",
-    image: toolsImage,
+    image: masterSeniorImage,
     category: "Уход",
     description: "Мягкое выравнивание тона без эффекта окрашивания.",
   },
@@ -63,7 +75,7 @@ export const services = [
     title: "Fade",
     price: "от 2 500 ₽",
     duration: "60 мин",
-    image: haircutImage,
+    image: serviceFadeImage,
     category: "Стрижки",
     description: "Чистый переход машинкой с доводкой ножницами.",
   },
@@ -71,7 +83,7 @@ export const services = [
     title: "Детская стрижка",
     price: "от 1 600 ₽",
     duration: "40 мин",
-    image: haircutImage,
+    image: serviceFamilyImage,
     category: "Стрижки",
     description: "Аккуратная форма для гостей до 12 лет.",
   },
@@ -79,7 +91,7 @@ export const services = [
     title: "Королевское бритье",
     price: "от 2 300 ₽",
     duration: "50 мин",
-    image: beardImage,
+    image: serviceShaveImage,
     category: "Бритье",
     description: "Опасная бритва, горячее полотенце и уход после бритья.",
   },
@@ -87,7 +99,7 @@ export const services = [
     title: "Бритье головы",
     price: "от 1 900 ₽",
     duration: "40 мин",
-    image: beardImage,
+    image: serviceShaveImage,
     category: "Бритье",
     description: "Гладкое бритье с подготовкой кожи и спокойным финишем.",
   },
@@ -95,7 +107,7 @@ export const services = [
     title: "Оформление усов",
     price: "от 800 ₽",
     duration: "20 мин",
-    image: beardImage,
+    image: masterRazorImage,
     category: "Борода",
     description: "Форма усов, контур и легкая фиксация.",
   },
@@ -111,7 +123,7 @@ export const services = [
     title: "Укладка",
     price: "от 700 ₽",
     duration: "15 мин",
-    image: toolsImage,
+    image: serviceStylingImage,
     category: "Уход",
     description: "Финишная форма перед встречей, съемкой или событием.",
   },
@@ -119,7 +131,7 @@ export const services = [
     title: "Барбер-SPA",
     price: "от 2 100 ₽",
     duration: "45 мин",
-    image: toolsImage,
+    image: serviceSpaImage,
     category: "Уход",
     description: "Очищение, массаж кожи головы и легкий уход.",
   },
@@ -127,7 +139,7 @@ export const services = [
     title: "Отец и сын",
     price: "от 3 500 ₽",
     duration: "90 мин",
-    image: haircutImage,
+    image: serviceFamilyImage,
     category: "Комплексы",
     description: "Две стрижки подряд с общим временем у мастеров.",
   },
@@ -135,7 +147,7 @@ export const services = [
     title: "Консультация по образу",
     price: "от 1 000 ₽",
     duration: "25 мин",
-    image: masterImage,
+    image: masterGreenImage,
     category: "Консультация",
     description: "Подбор формы, длины, ухода и графика следующих визитов.",
   },
@@ -154,7 +166,7 @@ export const masters = [
     name: "Никита Орлов",
     role: "Барбер",
     experience: "6 лет",
-    image: haircutImage,
+    image: masterFadeImage,
     tags: ["fade", "текстура", "короткие формы"],
     bio: "Любит чистые переходы и стрижки, которые выглядят свежо через две недели.",
   },
@@ -162,7 +174,7 @@ export const masters = [
     name: "Илья Северин",
     role: "Барбер-стилист",
     experience: "7 лет",
-    image: beardImage,
+    image: masterRazorImage,
     tags: ["борода", "бритье", "уход"],
     bio: "Работает с линией бороды и аккуратным бритьем без театральности.",
   },
@@ -170,7 +182,7 @@ export const masters = [
     name: "Максим Ларионов",
     role: "Барбер",
     experience: "5 лет",
-    image: toolsImage,
+    image: masterModernImage,
     tags: ["кроп", "fade", "быстрый визит"],
     bio: "Держит темп и делает короткие формы без грубых переходов.",
   },
@@ -178,7 +190,7 @@ export const masters = [
     name: "Роман Беляев",
     role: "Мастер бритья",
     experience: "8 лет",
-    image: beardImage,
+    image: masterClassicImage,
     tags: ["бритье", "усы", "контур"],
     bio: "Специализируется на бритвенных услугах и плотной линии бороды.",
   },
@@ -186,7 +198,7 @@ export const masters = [
     name: "Денис Кравцов",
     role: "Барбер",
     experience: "4 года",
-    image: haircutImage,
+    image: masterTowelImage,
     tags: ["текстура", "средняя длина", "укладка"],
     bio: "Помогает подобрать форму, которая не разваливается после душа.",
   },
@@ -194,7 +206,7 @@ export const masters = [
     name: "Сергей Невский",
     role: "Топ-барбер",
     experience: "11 лет",
-    image: masterImage,
+    image: masterSeniorImage,
     tags: ["первый визит", "классика", "консультация"],
     bio: "Собирает образ целиком: волосы, бороду, уход и интервал визитов.",
   },
@@ -202,14 +214,14 @@ export const masters = [
     name: "Павел Грин",
     role: "Барбер",
     experience: "6 лет",
-    image: toolsImage,
+    image: masterGreenImage,
     tags: ["детская стрижка", "комплексы", "уход"],
     bio: "Спокойно ведет семейные записи и аккуратные комплексные услуги.",
   },
 ];
 
 export const facts = [
-  { value: "4.9", label: "средняя оценка гостей" },
-  { value: "12 мин", label: "от Невского проспекта пешком" },
-  { value: "10-22", label: "работаем каждый день" },
+  { value: "Стрижка", label: "форма под рост волос" },
+  { value: "Борода", label: "контур, бритье, уход" },
+  { value: "Уход", label: "укладка и SPA-ритуалы" },
 ];

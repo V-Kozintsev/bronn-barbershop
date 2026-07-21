@@ -25,7 +25,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <header class="site-header">
+  <header class="site-header" :class="{ 'menu-active': isOpen }">
     <RouterLink class="brand" to="/" aria-label="Бронн Барбершоп">
       <img :src="logoUrl" alt="Бронн Барбершоп" />
     </RouterLink>
@@ -59,32 +59,34 @@ onBeforeUnmount(() => {
       </button>
     </div>
 
-    <Transition name="drawer-fade">
-      <button
-        v-if="isOpen"
-        class="menu-scrim"
-        type="button"
-        aria-label="Закрыть меню"
-        @click="isOpen = false"
-      ></button>
-    </Transition>
+    <Teleport to="body">
+      <Transition name="drawer-fade">
+        <button
+          v-if="isOpen"
+          class="menu-scrim"
+          type="button"
+          aria-label="Закрыть меню"
+          @click="isOpen = false"
+        ></button>
+      </Transition>
 
-    <Transition name="drawer">
-      <aside v-if="isOpen" id="mobile-menu" class="mobile-menu" aria-label="Мобильное меню">
-        <RouterLink class="mobile-menu__brand" to="/">
-          <img :src="logoUrl" alt="Бронн Барбершоп" />
-        </RouterLink>
-        <RouterLink v-for="item in navItems" :key="item.to" :to="item.to">
-          {{ item.label }}
-        </RouterLink>
-        <RouterLink class="button mobile-menu__cta" to="/booking">Записаться онлайн</RouterLink>
-        <div class="mobile-menu__meta">
-          <a :href="contacts.phoneHref">{{ contacts.phone }}</a>
-          <a :href="contacts.telegramHref">Telegram</a>
-          <span>{{ contacts.hours }}</span>
-          <span>{{ contacts.address }}</span>
-        </div>
-      </aside>
-    </Transition>
+      <Transition name="drawer">
+        <aside v-if="isOpen" id="mobile-menu" class="mobile-menu" aria-label="Мобильное меню">
+          <RouterLink class="mobile-menu__brand" to="/">
+            <img :src="logoUrl" alt="Бронн Барбершоп" />
+          </RouterLink>
+          <RouterLink v-for="item in navItems" :key="item.to" :to="item.to">
+            {{ item.label }}
+          </RouterLink>
+          <RouterLink class="button mobile-menu__cta" to="/booking">Записаться онлайн</RouterLink>
+          <div class="mobile-menu__meta">
+            <a :href="contacts.phoneHref">{{ contacts.phone }}</a>
+            <a :href="contacts.telegramHref">Telegram</a>
+            <span>{{ contacts.hours }}</span>
+            <span>{{ contacts.address }}</span>
+          </div>
+        </aside>
+      </Transition>
+    </Teleport>
   </header>
 </template>
