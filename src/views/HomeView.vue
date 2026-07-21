@@ -1,0 +1,73 @@
+<script setup>
+import { ArrowRight, Clock, MapPin, Star } from "lucide-vue-next";
+import ServiceCard from "../components/ServiceCard.vue";
+import MasterCard from "../components/MasterCard.vue";
+import { assets, contacts, facts, masters, services } from "../data/siteData";
+</script>
+
+<template>
+  <section class="hero-section">
+    <div class="hero-copy">
+      <span class="eyebrow">Санкт-Петербург · ул. Рубинштейна</span>
+      <h1>Бронн</h1>
+      <p>
+        Барбершоп для аккуратной формы, чистой бороды и спокойного сервиса без
+        лишней театральности.
+      </p>
+      <div class="hero-actions">
+        <RouterLink class="button" to="/booking">
+          Записаться
+          <ArrowRight :size="19" />
+        </RouterLink>
+        <a class="button button-ghost" :href="contacts.phoneHref">{{ contacts.phone }}</a>
+      </div>
+      <div class="hero-facts">
+        <div v-for="fact in facts" :key="fact.label">
+          <strong>{{ fact.value }}</strong>
+          <span>{{ fact.label }}</span>
+        </div>
+      </div>
+    </div>
+    <img class="hero-image" :src="assets.heroImage" alt="Интерьер барбершопа Бронн" />
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <span class="eyebrow">Услуги</span>
+      <h2>Без лишней суеты, с понятным результатом</h2>
+      <RouterLink to="/services">Весь прайс <ArrowRight :size="18" /></RouterLink>
+    </div>
+    <div class="service-grid">
+      <ServiceCard v-for="service in services.slice(0, 3)" :key="service.title" :service="service" />
+    </div>
+  </section>
+
+  <section class="split-section">
+    <img :src="assets.toolsImage" alt="Инструменты барбершопа" loading="lazy" />
+    <div>
+      <span class="eyebrow">Подход</span>
+      <h2>Сначала форма, потом средство</h2>
+      <p>
+        Мастер смотрит на рост волос, посадку бороды, привычку носить головной убор
+        и время, которое вы готовы тратить утром. Поэтому стрижка живет в реальности,
+        а не только в день визита.
+      </p>
+      <ul class="check-list">
+        <li><Star :size="18" /> Персональная схема ухода после каждой услуги</li>
+        <li><Clock :size="18" /> Запас между визитами, чтобы не торопить гостей</li>
+        <li><MapPin :size="18" /> Центр города, 12 минут от Невского проспекта</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="section-heading">
+      <span class="eyebrow">Команда</span>
+      <h2>Мастера, к которым возвращаются</h2>
+      <RouterLink to="/masters">Все мастера <ArrowRight :size="18" /></RouterLink>
+    </div>
+    <div class="master-grid">
+      <MasterCard v-for="master in masters.slice(0, 2)" :key="master.name" :master="master" />
+    </div>
+  </section>
+</template>
