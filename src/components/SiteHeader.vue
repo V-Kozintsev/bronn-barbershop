@@ -27,7 +27,11 @@ onBeforeUnmount(() => {
 <template>
   <header class="site-header" :class="{ 'menu-active': isOpen }">
     <RouterLink class="brand" to="/" aria-label="Бронн Барбершоп">
-      <img :src="logoUrl" alt="Бронн Барбершоп" />
+      <img :src="logoUrl" alt="" aria-hidden="true" />
+      <span class="brand-word">
+        <strong>БРОНН</strong>
+        <small>barbershop spb</small>
+      </span>
     </RouterLink>
 
     <nav class="desktop-nav" aria-label="Основная навигация">
@@ -73,7 +77,11 @@ onBeforeUnmount(() => {
       <Transition name="drawer">
         <aside v-if="isOpen" id="mobile-menu" class="mobile-menu" aria-label="Мобильное меню">
           <RouterLink class="mobile-menu__brand" to="/">
-            <img :src="logoUrl" alt="Бронн Барбершоп" />
+            <img :src="logoUrl" alt="" aria-hidden="true" />
+            <span>
+              <strong>БРОНН</strong>
+              <small>barbershop spb</small>
+            </span>
           </RouterLink>
           <RouterLink v-for="item in navItems" :key="item.to" :to="item.to">
             {{ item.label }}

@@ -1,16 +1,15 @@
-<svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Бронн Барбершоп</title>
-  <desc id="desc">Логотип вымышленного барбершопа Бронн</desc>
-  <rect x="1" y="1" width="58" height="58" rx="10" fill="#232527"/>
-  <path d="M16 42c9.6-2.2 17.8-8.8 22.3-18.1" stroke="#F9F4EC" stroke-width="4" stroke-linecap="round"/>
-  <path d="M16 18c9.6 2.2 17.8 8.8 22.3 18.1" stroke="#F9F4EC" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="18" cy="18" r="3.8" fill="#B98245"/>
-  <circle cx="18" cy="42" r="3.8" fill="#B98245"/>
-  <path d="M38 15l6 6-15 15-6-6 15-15Z" fill="#934B38"/>
-  <path d="M43 14l3 3" stroke="#F9F4EC" stroke-width="2" stroke-linecap="round"/>
-  <text x="72" y="40" fill="#232527" font-family="Arial Black, Manrope, Arial, sans-serif" font-size="30" font-weight="900" letter-spacing="0">БРОНН</text>
-  <path d="M73 49h92" stroke="#B98245" stroke-width="2.4" stroke-linecap="round"/>
-  <path d="M162 17h24m-12-12v24" stroke="#934B38" stroke-width="3" stroke-linecap="round"/>
-  <path d="M163 42h42" stroke="#232527" stroke-width="5" stroke-linecap="round"/>
-  <path d="M166 51h30" stroke="#B98245" stroke-width="3" stroke-linecap="round"/>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Эмблема Бронн</title>
+  <desc id="desc">Парикмахерские ножницы для логотипа барбершопа Бронн</desc>
+  <rect x="2" y="2" width="60" height="60" rx="13" fill="#232527"/>
+  <rect x="2" y="2" width="60" height="60" rx="13" stroke="#F9F4EC" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M25.6 31.8 43.9 15.6c1.7-1.5 4.2.6 2.9 2.5L35.2 34.5" stroke="#F9F4EC" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M38.6 36.5 47.8 49c1.2 1.7-.9 3.8-2.6 2.6L31.8 42.4" stroke="#F9F4EC" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25.4 42.6 12.1 51.7c-1.7 1.1-3.7-.9-2.5-2.6l9.1-12.7" stroke="#F9F4EC" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28.6 29.3 17.7 14.9c-1.3-1.7.8-3.9 2.6-2.7l13.8 9.5" stroke="#F9F4EC" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="19" cy="23" r="6.2" fill="#232527" stroke="#B98245" stroke-width="4"/>
+  <circle cx="19" cy="41" r="6.2" fill="#232527" stroke="#B98245" stroke-width="4"/>
+  <circle cx="32" cy="32" r="4.4" fill="#B98245"/>
+  <path d="M39.5 24.5 48.5 15.5" stroke="#B98245" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M39.5 39.5 48.5 48.5" stroke="#B98245" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

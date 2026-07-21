@@ -82,25 +82,18 @@ main {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
   min-width: max-content;
 }
 
 .brand img {
-  width: clamp(164px, 17vw, 220px);
+  width: clamp(44px, 4vw, 54px);
   height: auto;
 }
 
-.brand-mark {
+.brand-word {
   display: grid;
-  place-items: center;
-  width: 43px;
-  height: 43px;
-  border-radius: 7px;
-  background: var(--charcoal);
-  color: var(--cream);
-  font-family: "Oswald", sans-serif;
-  font-size: 24px;
+  gap: 3px;
 }
 
 .brand strong,
@@ -112,9 +105,26 @@ main {
   text-transform: uppercase;
 }
 
+.brand strong {
+  position: relative;
+  width: fit-content;
+  font-size: clamp(25px, 2.5vw, 34px);
+  letter-spacing: 0;
+}
+
+.brand strong::after {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  content: "";
+  border-radius: 999px;
+  background: var(--brass);
+}
+
 .brand small {
   display: block;
-  margin-top: 4px;
   color: var(--muted);
   font-size: 11px;
   font-weight: 700;
@@ -285,6 +295,9 @@ main {
 }
 
 .mobile-menu__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   width: fit-content;
   margin-bottom: 20px;
   padding: 0 !important;
@@ -292,10 +305,24 @@ main {
 }
 
 .mobile-menu__brand img {
-  width: 168px;
-  padding: 9px 10px;
-  border-radius: 8px;
-  background: #fffaf2;
+  width: 54px;
+}
+
+.mobile-menu__brand strong {
+  display: block;
+  color: #fffaf2;
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.mobile-menu__brand small {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255, 250, 242, 0.58);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .mobile-menu__cta {
@@ -1064,13 +1091,16 @@ p {
     color: var(--ink);
   }
 
-  .brand-mark {
-    width: 39px;
-    height: 39px;
+  .brand img {
+    width: 44px;
   }
 
-  .brand img {
-    width: 146px;
+  .brand strong {
+    font-size: 25px;
+  }
+
+  .brand small {
+    display: none;
   }
 
   .icon-link {
